@@ -13,9 +13,11 @@
  * @returns {array[object]} users 유저의 정보가 객체로 담긴 배열
  */
 
+
 const usersHandler = (users, jobArea) => {
-  return;
+  return users.filter((user) => user.jobArea === jobArea).map((foundUser) => ({...foundUser, language : "JavaScript"}));
 };
+
 
 /**
  * 문자열을 받아서, 단어가 카운트 된 객체를 리턴하는 함수를 구현해 주세요.
@@ -27,7 +29,11 @@ const usersHandler = (users, jobArea) => {
  * @returns {object} 단어가 카운팅 된 객체
  */
 const wordCount = (words) => {
-  return;
+  if (!words) return {}
+  return words.split(" ").reduce((count, word) => {
+    count[word] = count.hasOwnProperty(word) ? count[word] +1 : 1;
+    return count;
+  }, {});
 };
 
 module.exports = { usersHandler, wordCount };

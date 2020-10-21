@@ -12,16 +12,16 @@ const mysql = require("mysql2/promise");
  *
  */
 
-const DB_HOST = "";
-const DB_USER = "";
-const DB_NAME = "";
-const DB_PASSWORD = "";
+const DB_HOST = "localhost";
+const DB_USER = "root";
+const DB_NAME = "test";
+const DB_PASSWORD = "Kwonlonso14!";
 
-// const db = mysql.createPool({
-//   host: DB_HOST,
-//   user: DB_USER,
-//   database: DB_NAME,
-//   password: DB_PASSWORD,
-// });
+const db = mysql.createPool({
+  host: DB_HOST,
+  user: DB_USER,
+  database: DB_NAME,
+  password: DB_PASSWORD,
+});
 
-// module.exports = db;
+module.exports = db;
